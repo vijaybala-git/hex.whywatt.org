@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WhyWatt? | Home Electrification eXplorer</title>
+    <style>
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #ffffff; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
+    </style>
+</head>
+<body>
+    <iframe id="app" allow="geolocation; microphone; camera"></iframe>
+    <script>
+        // Forward the parent's query string (e.g. ?s=<share-blob>) into the iframe src.
+        // The app reads ?s= from its OWN location, which is this iframe — so the share
+        // payload must be carried across the iframe boundary, not left on the parent URL.
+        var APP = "https://vijaybala-hug-whywatt.hf.space";
+        document.getElementById("app").src = APP + window.location.search + window.location.hash;
+    </script>
+</body>
+</html>
